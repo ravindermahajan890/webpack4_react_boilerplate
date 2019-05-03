@@ -1,5 +1,30 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const autoprefixer = require("autoprefixer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const CSSLoader = {
+  loader: "css-loader",
+  options: {
+    modules: false,
+    sourceMap: true,
+    minimize: true
+  }
+};
+
+const postCSSLoader = {
+  loader: "postcss-loader",
+  options: {
+    ident: "postcss",
+    sourceMap: true,
+    plugins: () => [
+      autoprefixer({
+        browsers: [">1%", "last 4 versions", "Firefox ESR", "not ie < 9"]
+      })
+    ]
+  }
+};
+
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -22,6 +47,28 @@ module.exports = {
         }
       },
       {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              outputPath: "images",
+              name: "[name].[ext]"
+            }
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        exclude: /\.module\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          postCSSLoader,
+          "sass-loader"
+        ]
+      },
+      {
         test: /\.html$/,
         use: [
           {
@@ -34,6 +81,12 @@ module.exports = {
   optimization: {
     splitChunks: {
       cacheGroups: {
+        styles: {
+          name: "styles",
+          test: /\.scss$/,
+          chunks: "all",
+          enforce: true
+        },
         vendor: {
           test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
           name: "vendor",
@@ -46,6 +99,12 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: "./src/index.html",
       filename: "./index.html"
+    }),
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name].css",
+      chunkFilename: "[id].css"
     })
   ]
 };
