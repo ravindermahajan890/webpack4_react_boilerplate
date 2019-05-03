@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
-import Gallery from "./test";
+// import Gallery from "./test";
+import "./styles/index.scss";
 const App = () => {
   return (
     <BrowserRouter>
