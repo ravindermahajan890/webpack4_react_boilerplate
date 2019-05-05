@@ -1,6 +1,7 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
+import Example from "./components/Example/Example";
 // import Gallery from "./test";
 import "./styles/index.scss";
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
               <Route path="/home" component={Demo} />
+              <Route path="/example" component={Example} />
             </Switch>
           </Suspense>
         </div>
