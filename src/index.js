@@ -15,7 +15,7 @@ const App = () => {
           </div>
           <Suspense fallback={<div>Loading...</div>}>
             <Switch>
-              <Route path="/home" component={Home} />
+              <Route path="/home" component={Demo} />
             </Switch>
           </Suspense>
         </div>
@@ -23,6 +23,8 @@ const App = () => {
     </BrowserRouter>
   );
 };
-const Home = lazy(() => import(/* webpackChunkName:"home" */ "./home"));
+const Demo = lazy(() =>
+  import(/* webpackChunkName:"home" */ "./components/Demo/Demo")
+);
 
 ReactDOM.render(<App />, document.querySelector("#root"));
