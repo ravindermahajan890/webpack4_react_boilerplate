@@ -1,4 +1,5 @@
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 // Export a function. Accept the base config as the only param.
 module.exports = async ({ config, mode }) => {
@@ -12,6 +13,10 @@ module.exports = async ({ config, mode }) => {
     loaders: ["style-loader", "css-loader", "sass-loader"],
     include: path.resolve(__dirname, "../")
   });
+
+  config.plugins.push(
+    new CopyWebpackPlugin([{ from: "./src/images", to: "images" }])
+  );
 
   // Return the altered config
   return config;

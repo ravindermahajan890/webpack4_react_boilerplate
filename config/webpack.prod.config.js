@@ -3,6 +3,7 @@ const path = require("path");
 const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const postCSSLoader = {
   loader: "postcss-loader",
@@ -94,6 +95,7 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
+    new CopyWebpackPlugin([{ from: "./src/images", to: "images" }]),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional

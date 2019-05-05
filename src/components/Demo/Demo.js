@@ -5,7 +5,7 @@ const Demo = props => {
   return (
     <div id="hell">
       <div>Hello {props.name}</div>
-      <img src={require("./../../images/bitmap.png")} />
+      <img src="./../../images/bitmap.png" />
     </div>
   );
 };
