@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   id="hell"
 >
   <div>
-    Hello 
+    Welcome 
     Ravinder
   </div>
   <img

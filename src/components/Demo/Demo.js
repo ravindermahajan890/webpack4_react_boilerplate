@@ -4,7 +4,7 @@ import "./demo.scss";
 const Demo = props => {
   return (
     <div id="hell">
-      <div>Hello {props.name}</div>
+      <div>Welcome {props.name}</div>
       <img src="./../../images/bitmap.png" />
     </div>
   );
