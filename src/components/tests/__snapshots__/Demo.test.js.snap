@@ -9,7 +9,7 @@ exports[`renders correctly 1`] = `
     Ravinder
   </div>
   <img
-    src="./../../images/bitmap.png"
+    src="../../images/bitmap.png"
   />
 </div>
 `;

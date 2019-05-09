@@ -1,8 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { Route, BrowserRouter, Link, Switch } from "react-router-dom";
-import Example from "../Example/Example";
+import Example from "./Example";
 // import Gallery from "./test";
-import "../../styles/index.scss";
+import "../styles/index.scss";
 const App = () => (
   <BrowserRouter>
     <div>
@@ -22,5 +22,7 @@ const App = () => (
     </div>
   </BrowserRouter>
 );
-const Demo = lazy(() => import(/* webpackChunkName:"home" */ "../Demo/Demo"));
+const Demo = lazy(() =>
+  import(/* webpackChunkName:"home" */ "../components/Demo")
+);
 export default App;

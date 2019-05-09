@@ -1,7 +1,7 @@
 import React from "react";
 
 import { render, fireEvent } from "react-testing-library";
-import Example from "../Example/Example";
+import Example from "../Example";
 
 test("asda", () => {
   const { container, asFragment } = render(<Example />);

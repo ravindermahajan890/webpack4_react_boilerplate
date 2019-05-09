@@ -5,7 +5,7 @@ const Demo = props => {
   return (
     <div id="hell">
       <div>Welcome {props.name}</div>
-      <img src="./../../images/bitmap.png" />
+      <img src="../../images/bitmap.png" />
     </div>
   );
 };
