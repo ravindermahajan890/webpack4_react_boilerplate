@@ -21,8 +21,8 @@ const postCSSLoader = {
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "[name]-bundle.js",
-    chunkFilename: "[name]-chunk.js",
+    filename: "static/[name]-bundle.js",
+    chunkFilename: "static/[name]-chunk.js",
     publicPath: "/",
     path: path.resolve(__dirname, "../dist")
   },
@@ -99,8 +99,8 @@ module.exports = {
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional
-      filename: "[name].css",
-      chunkFilename: "[name].css"
+      filename: "static/[name].css",
+      chunkFilename: "static/[name].css"
     })
   ]
 };

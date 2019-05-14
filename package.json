@@ -9,7 +9,8 @@
     "start:prod": "webpack-dev-server --config config/webpack.prod.config.js --history-api-fallback --mode production",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "test": "jest",
+    "now-build": "rm -rf dist && webpack --config config/webpack.prod.config.js --mode production"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/test-setup.js",
