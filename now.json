@@ -20,6 +20,13 @@
       "dest": "/static/$1"
     },
     {
+      "src": "/images/(.*)",
+      "headers": {
+        "cache-control": "s-maxage=31536000,immutable"
+      },
+      "dest": "/images/$1"
+    },
+    {
       "src": "/favicon.ico",
       "dest": "/favicon.ico"
     },
