@@ -1,3 +1,19 @@
 body {
   color: green;
+  background: #f3d886;
+  box-sizing: border-box;
+  .nav {
+    font-size: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    &__link {
+      display: block;
+      color: #292626;
+      position: relative;
+      position: relative;
+      padding: 20px;
+    }
+  }
 }

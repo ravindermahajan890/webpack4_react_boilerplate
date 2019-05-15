@@ -8,9 +8,15 @@ const App = () => (
     <div>
       <div>
         <div className="nav">
-          <Link to="/Gallery">Gallery</Link>
-          <Link to="/home">home</Link>
-          <Link to="/Example">Example with react hooks</Link>
+          <Link className="nav nav__link" to="/Gallery">
+            Gallery
+          </Link>
+          <Link className="nav nav__link" to="/home">
+            home
+          </Link>
+          <Link className="nav nav__link" to="/Example">
+            Example with react hooks
+          </Link>
         </div>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
