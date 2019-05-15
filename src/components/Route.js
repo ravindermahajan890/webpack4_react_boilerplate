@@ -9,10 +9,10 @@ const App = () => (
       <div>
         <div className="nav">
           <Link className="nav nav__link" to="/Gallery">
-            Gallery
+            Gallery with no chunking
           </Link>
           <Link className="nav nav__link" to="/home">
-            home
+            Home with split chunks
           </Link>
           <Link className="nav nav__link" to="/Example">
             Example with react hooks
