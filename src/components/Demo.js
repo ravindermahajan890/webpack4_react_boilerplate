@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./Demo.scss";
 const Demo = props => {
   return (
-    <div id="hell">
+    <div id="welcome">
       <div>Welcome {props.name}</div>
       <img src="../../images/bitmap.png" />
     </div>
