@@ -12,7 +12,7 @@ const App = () => (
             Gallery with no chunking
           </Link>
           <Link className="nav nav__link" to="/home">
-            Home with split chunks
+            Home with split chunks.
           </Link>
           <Link className="nav nav__link" to="/Example">
             Example with react hooks
