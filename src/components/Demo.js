@@ -6,6 +6,7 @@ const Demo = props => {
     <div id="hell">
       <div>Welcome {props.name}</div>
       <img src="../../images/bitmap.png" />
+      <img src="../../images/mock-asset-image.jpg" />
     </div>
   );
 };
