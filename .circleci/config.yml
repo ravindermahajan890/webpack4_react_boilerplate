@@ -6,6 +6,9 @@ jobs:
       - image: cimg/node:15.1
     steps:
       - checkout
+       - run:
+          name: Node Sass
+          command: npm install node-sass@4.10.0
       - run:
           name: install packages
           command: npm install
